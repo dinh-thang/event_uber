@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: eventuber-db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: eventuber
+    ports:
+      - "5432:5432"
+    volumes:
+      - eventhub_data:/var/lib/postgresql/data
+
+volumes:
+  eventhub_data:
